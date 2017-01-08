@@ -16,7 +16,7 @@ RUN yum install -y git \
     && yum clean all
 
 ARG TAG=cleanup_pip
-RUN git clone -b v$TAG https://github.com/aleksandra-tarkowska/omero-install.git /tmp/omero-install
+RUN git clone -b $TAG https://github.com/aleksandra-tarkowska/omero-install.git /tmp/omero-install
 RUN bash $OMERO_INSTALL/step01_centos7_init.sh
 RUN bash $OMERO_INSTALL/step01_centos_java_deps.sh
 
